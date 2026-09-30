@@ -49,7 +49,7 @@ supported, but with a lighter level of polish/testing than Markdown.
 
 ```lua
 {
-  "yourusername/markdown-toc.nvim",
+  "chiwhalee/markdown-toc.nvim",
   ft = { "markdown", "tex" },
   opts = {},
 }
@@ -62,7 +62,7 @@ Using `opts = {}` (rather than a `config` function) lets lazy.nvim call
 
 ```lua
 use({
-  "yourusername/markdown-toc.nvim",
+  "chiwhalee/markdown-toc.nvim",
   ft = { "markdown", "tex" },
   config = function()
     require("markdown-toc").setup()
@@ -73,7 +73,7 @@ use({
 ### [vim-plug](https://github.com/junegunn/vim-plug)
 
 ```vim
-Plug 'yourusername/markdown-toc.nvim'
+Plug 'chiwhalee/markdown-toc.nvim'
 ```
 
 ```lua
