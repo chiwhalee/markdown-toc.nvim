@@ -1,12 +1,12 @@
--- markdown-toc.nvim: a lightweight, native-fold-based Table of Contents
+-- mtoc.nvim: a lightweight, native-fold-based Table of Contents
 -- navigator for markdown (and LaTeX) buffers.
 --
 -- Usage:
---   require("markdown-toc").setup({ ... })  -- optional, see README for options
+--   require("mtoc").setup({ ... })  -- optional, see README for options
 --
--- See doc/markdown-toc.txt or README.md for full documentation.
-local config = require("markdown-toc.config")
-local toc = require("markdown-toc.toc")
+-- See doc/mtoc.txt or README.md for full documentation.
+local config = require("mtoc.config")
+local toc = require("mtoc.toc")
 
 local M = {}
 

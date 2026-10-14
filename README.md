@@ -1,15 +1,15 @@
-# markdown-toc.nvim
+# mtoc.nvim
 
 A lightweight, native-fold-based Table of Contents navigator for **markdown**
 (with bonus **LaTeX** support) in Neovim.
 
-![markdown-toc.nvim in action](https://example.com/markdown-toc.png)
+![mtoc.nvim in action](https://example.com/mtoc.png)
 
 ## Why this plugin?
 
 Most outline/TOC plugins for Neovim (e.g. `aerial.nvim`, `symbols-outline.nvim`)
 reimplement their own tree-rendering engine to display and collapse a
-document's structure. `markdown-toc.nvim` takes a different approach: it
+document's structure. `mtoc.nvim` takes a different approach: it
 builds directly on **Neovim's native folding** (`foldexpr`/`foldtext`), which
 keeps it small and dependency-free, while fixing the rough edges that make
 raw Vim folding awkward for outline navigation:
@@ -49,23 +49,23 @@ supported, but with a lighter level of polish/testing than Markdown.
 
 ```lua
 {
-  "chiwhalee/markdown-toc.nvim",
+  "chiwhalee/mtoc.nvim",
   ft = { "markdown", "tex" },
   opts = {},
 }
 ```
 
 Using `opts = {}` (rather than a `config` function) lets lazy.nvim call
-`require("markdown-toc").setup(opts)` for you automatically.
+`require("mtoc").setup(opts)` for you automatically.
 
 ### [packer.nvim](https://github.com/wbthomason/packer.nvim)
 
 ```lua
 use({
-  "chiwhalee/markdown-toc.nvim",
+  "chiwhalee/mtoc.nvim",
   ft = { "markdown", "tex" },
   config = function()
-    require("markdown-toc").setup()
+    require("mtoc").setup()
   end,
 })
 ```
@@ -73,11 +73,11 @@ use({
 ### [vim-plug](https://github.com/junegunn/vim-plug)
 
 ```vim
-Plug 'chiwhalee/markdown-toc.nvim'
+Plug 'chiwhalee/mtoc.nvim'
 ```
 
 ```lua
-require("markdown-toc").setup()
+require("mtoc").setup()
 ```
 
 ## Usage
@@ -101,13 +101,13 @@ Call `setup()` (even with no arguments) to enable the plugin's default
 keymap and highlight groups:
 
 ```lua
-require("markdown-toc").setup({
+require("mtoc").setup({
   -- Filetypes this plugin attaches to.
   filetypes = { "markdown", "tex" },
 
   -- Normal-mode keymap (in attached buffers) that opens the TOC.
   -- Set to `false` to disable the automatic keymap entirely (you can then
-  -- call `require("markdown-toc").open()` yourself, e.g. from your own keymap).
+  -- call `require("mtoc").open()` yourself, e.g. from your own keymap).
   keymap = "<leader>tc",
 
   -- Floating window size, as a fraction of the editor's total columns/lines.

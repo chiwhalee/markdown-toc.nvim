@@ -1,37 +1,37 @@
-*markdown-toc.txt*  A native-fold-based Table of Contents for markdown/LaTeX
+*mtoc.txt*  A native-fold-based Table of Contents for markdown/LaTeX
 
 ==============================================================================
-CONTENTS                                                *markdown-toc-contents*
+CONTENTS                                                         *mtoc-contents*
 
-  1. Introduction ............... |markdown-toc-introduction|
-  2. Setup ....................... |markdown-toc-setup|
-  3. Usage ....................... |markdown-toc-usage|
-  4. Configuration ............... |markdown-toc-configuration|
-  5. Folding behavior ............ |markdown-toc-folding|
+  1. Introduction ............... |mtoc-introduction|
+  2. Setup ....................... |mtoc-setup|
+  3. Usage ....................... |mtoc-usage|
+  4. Configuration ............... |mtoc-configuration|
+  5. Folding behavior ............ |mtoc-folding|
 
 ==============================================================================
-1. Introduction                                     *markdown-toc-introduction*
+1. Introduction                                              *mtoc-introduction*
 
-markdown-toc.nvim opens a floating Table of Contents for the current
+mtoc.nvim opens a floating Table of Contents for the current
 markdown or LaTeX buffer, letting you jump to any heading, and collapse or
 expand sections using Neovim's native folding -- rendered in a clean,
 Word/Acrobat-style outline (arrow indicators, no line-count clutter).
 
 ==============================================================================
-2. Setup                                                   *markdown-toc-setup*
+2. Setup                                                            *mtoc-setup*
 
 Call the setup function once, typically from your plugin manager's config: >lua
-    require("markdown-toc").setup()
+    require("mtoc").setup()
 <
 `setup()` may be called with no arguments to use the defaults, or with a
-table overriding any subset of options (see |markdown-toc-configuration|).
+table overriding any subset of options (see |mtoc-configuration|).
 
 ==============================================================================
-3. Usage                                                   *markdown-toc-usage*
+3. Usage                                                            *mtoc-usage*
 
 By default, pressing `<leader>tc` in a `markdown` or `tex` buffer opens the
 TOC in a floating window. You can also call it manually: >lua
-    require("markdown-toc").open()
+    require("mtoc").open()
 <
 Inside the TOC window:
 
@@ -43,10 +43,10 @@ Inside the TOC window:
   zR / zM       Open/close all folds (native Vim commands, work as usual).
 
 ==============================================================================
-4. Configuration                                   *markdown-toc-configuration*
+4. Configuration                                            *mtoc-configuration*
 
 Defaults, and the options table structure: >lua
-    require("markdown-toc").setup({
+    require("mtoc").setup({
       filetypes = { "markdown", "tex" },
       keymap = "<leader>tc",
       width = 0.8,
@@ -68,7 +68,7 @@ Defaults, and the options table structure: >lua
 See README.md for a description of each field.
 
 ==============================================================================
-5. Folding behavior                                       *markdown-toc-folding*
+5. Folding behavior                                                *mtoc-folding*
 
 The TOC uses Neovim's native `foldexpr` folding rather than a custom tree
 widget, so it stays lightweight. Some notable behaviors:

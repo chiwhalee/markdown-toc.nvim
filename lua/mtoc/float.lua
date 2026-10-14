@@ -1,4 +1,4 @@
--- Self-contained centered floating window helper, used only by markdown-toc.
+-- Self-contained centered floating window helper, used only by mtoc.
 -- This deliberately has no external dependencies, so the plugin doesn't rely
 -- on any third-party or personal floating-window library.
 local M = {}

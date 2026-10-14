@@ -7,7 +7,7 @@ M.defaults = {
 
   -- Normal-mode keymap (in attached buffers) that opens the TOC.
   -- Set to `false` to disable the automatic keymap entirely (you can then
-  -- call `require("markdown-toc").open()` yourself, e.g. from your own keymap).
+  -- call `require("mtoc").open()` yourself, e.g. from your own keymap).
   keymap = "<leader>tc",
 
   -- Floating window size, as a fraction of the editor's total columns/lines.

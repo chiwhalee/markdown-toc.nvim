@@ -4,8 +4,8 @@
 -- fold-state persistence, and cursor synchronization with the source buffer.
 local M = {}
 
-local config = require("markdown-toc.config")
-local float = require("markdown-toc.float")
+local config = require("mtoc.config")
+local float = require("mtoc.float")
 
 -- Per-filetype heading parser: given a single line of text, returns
 -- (level, title_text) if that line is a heading, or nil otherwise.
@@ -98,7 +98,7 @@ function _G.__markdown_toc_foldtext()
 end
 
 --- (Re-)apply the highlight groups derived from the current config. Called
---- automatically by `require("markdown-toc").setup()`.
+--- automatically by `require("mtoc").setup()`.
 ---@param opts table
 function M.apply_highlights(opts)
   for level, style in pairs(opts.levels) do
@@ -136,7 +136,7 @@ function M.open()
   local parse_heading = M.heading_parsers[vim.bo[src_buf].filetype]
   if not parse_heading then
     vim.notify(
-      "markdown-toc: unsupported filetype '" .. vim.bo[src_buf].filetype .. "'",
+      "mtoc: unsupported filetype '" .. vim.bo[src_buf].filetype .. "'",
       vim.log.levels.WARN
     )
     return
@@ -160,7 +160,7 @@ function M.open()
   end
 
   if #toc_items == 0 then
-    vim.notify("markdown-toc: no headings found", vim.log.levels.WARN)
+    vim.notify("mtoc: no headings found", vim.log.levels.WARN)
     return
   end
 

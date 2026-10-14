@@ -1,4 +1,4 @@
--- Basic, dependency-free test suite for markdown-toc.nvim.
+-- Basic, dependency-free test suite for mtoc.nvim.
 --
 -- Run with:
 --   nvim --headless -u tests/minimal_init.lua -c "lua dofile('tests/test_toc.lua')"
@@ -6,7 +6,7 @@
 -- Exits with code 0 on success, 1 on the first failure (via os.exit through
 -- vim.cmd("cquit"), since headless Neovim doesn't return non-zero otherwise).
 
-local toc = require("markdown-toc.toc")
+local toc = require("mtoc.toc")
 
 local failures = 0
 
