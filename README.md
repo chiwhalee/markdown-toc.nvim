@@ -3,8 +3,6 @@
 A lightweight, native-fold-based Table of Contents navigator for **markdown**
 (with bonus **LaTeX** support) in Neovim.
 
-![mtoc.nvim in action](https://example.com/mtoc.png)
-
 ## Why this plugin?
 
 Most outline/TOC plugins for Neovim (e.g. `aerial.nvim`, `symbols-outline.nvim`)
